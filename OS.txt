@@ -1,0 +1,290 @@
+#	OS
+
+WHAT IS OS
+--A SOFT WHERE WOULD ALLLOW USER OF COMP TO CONTRIL TH EHARDWARE OF COMP
+
+WHAT IS SIGNIFIANCE OF OS
+
+WHAT IS OOPS 
+--WAY OF NATURAL THINKING WHERE WE STATR FROM OutPut NEEDED UNDERSTANDING PROCESS AND THEN START WITH INPUT
+--BOTTOM TO UP APPROCH
+
+GENERATIONS OF PROGRAMMING
+--1G MACSHINE LANGUAGE
+  2G ASSEMBELY LANG-OPERATIIONAL CODE--HARDWARE DEPEDENT
+  3G HLL-HIGH LEVEL LANGUAGE--HARDWARE INDEPEDENT--WORA(WRITE ONCE RUN ANYWHERE)--COMPILER(HIGH LEVEL LANG TO MACSHINE LEVEL)--PLATFORM INDEPDENT DUE TO COMPILER 
+  4G SQL(STRUCTURED QUERY LANG)--CURD SUPPORT--
+  5G AI+NLP--AI AND NATURAL LANG PROCESSING--NLP+AL=PROMPTS
+
+significance of power button
+--USED FOR BOTH ON AND OFF
+
+OS SERVICES
+UI:CLI+BATCH PROCESSING+GUI(POINTING DEVICES
++AUI(AURAL UI)
+	
+COMMUNICATIOPN
+--MESSAGE ORIENTED,BROADEAST INTER PROCRSS
+
+PROCESS AMNAGMENT:=
+--NEW,EUNNABLE,blocketreninited?
+d men
+
+MEMORY MANAGMENT--HANDLED AAL LAYERSH
+
+WHAT IS PERSING
+--PROCESS OF SHIFTING DATA FROM ONE LAYER TO ANOTHER
+
+WHAT IS ARCHVAL
+--PROCESS OF SHIFTING DATA DOWN IN A HIERACEY
+
+CACHE
+--IT IS A BUFFER FOR FASTER ACCESS
+--WE FILL CASH ON THE BASICS OF LOCALITY OF REFERENCE SPATIAL OR TEMPORAL
+--LOCALITY OF REF-PREDITING WHAT WILL BE OR CAN BE USED
+--SPATIAL(ON ADDRESS)-IF SOMEBODY HAS ACCESS BLOCK 17 ,18 BE READY WITH 19-20-21
+--TEMPORAL(ON TIME)-CHECK WHAT IS BEING ACCESSED AGAIN AND AGAIN AND KEEP IT READY EVERY TIME
+
+
+ERRORHANDLING
+ERROR
+--STATE ONWARDS,NORMAL EXCEUTION IS NOT POSSIBLE
+EXCEPTION
+--REPORTING OF ERROR 
+EXCEPTION HANDLING
+-- THE PROCESS OF EITHER CONTIONUING WITH NORMAL FLOW IN A PRESENCE OF ERROR OR TRYING AN ALTERNATE FLOW WITH ERROR ITSELF
+
+
+
+
+KERNAL
+MONOLITHIC ONE LARGE CODE CAPABLE OF DOING EVERYTHING 
+-VE--MAINTING MANAGNING PDATING WOULD ALWAYS BE TROUBLESHOOT RESTART ON EVERY CHANGE
+MICRO--CODE ONLY PROVIDES INTERFACE TO USE VARIOUS DEVICES AND SERVICES MANAGING CODE DONE ENTIRE BY THE APPLICSTION AND TH ECODER
+-VE--APPLICATION DEVELOPMENT AND MANAGING BECOME DIFFICULT ISSUES/SPEED ISSUES 
++VE--NO RESTART
+HYBRID--BEST OF BOTH MAJOR SERVICES AND ACCESS BY KERNEL BUT CAN ADDD NEW NEEDED MODULE
+
+SHELL
+--HE IS ONLY RESPONSIBLE FOR DEVELOPMENT OF LINUX KERNEL
+TYPES OF SHELL-
+1.BASH(BOURNE AGAIN SHELL)
+2.CSH()
+3.
+
+THESE ARE SOME SHEELS ARE AVAIL ON FOREX LINUXV 
+EACG SHELL OPRATREPIP INSTALL
+754
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////LINUX////////////////////////////////////////////////////////////
+
+
+
+
+ls--list
+
+ls *.sh-- list .sh all files
+
+green color -- for all sh files
+blue -- for directory
+white-- for readeable or txt files
+
+man -- show you documents (man ls) command everything about command specific
+info ls-- detailed info
+whatis ls--info in one line limitations 
+--help -- gives documentations
+
+interms information
+*  info > man > help > whatis
+
+cat >file name --(cat > myfile.txt)
+you enter a mode in what you write saves after contrlol+d
+auto saves and overrite the data
+
+if you want to old +new data the command is 
+cat >> file name (cat >> demo.txt)
+
+
+cat command --show data of file ,create afile,write a data ito a file
+,to show script
+
+cat -n file namec
+
+
+
+head file name---prints first 10 line
+same as tail
+
+head -n 5 file name --prints first 5 line
+same as tails
+
+
+tail -f --monitor logs 
+
+more file name --show % of file remaing data once 100% done auto exit
+less file name -- you go to 100 % but till you not exit unless you entrer q
+ 
+nl file name-- list with numbers 
+
+wc file name-- no of lines,no of words,no of char all data
+wc -l file name --gives no of lines
+wc -c file name-- no of char
+
+we -w file name -- no of words
+
+head -n 5 large.txt | nl--gives 5 values with count each line
+
+
+grep-- print lines that matches patterns
+grep "data" file name -- whetre the data presents gives all the rows
+case sensitive
+
+grep -i -n "data" file name ---no case sensitive
+
+
+grep -l "data" *.txt--gives all the file names where data char present
+
+
+
+ 
+
+751
+7 all read write execute 
+5 read execute permission
+1 execute mode permission
+
+
+
+
+find--can search on day/size/update/group/mode
+find.<optiion> <file type> <pattern>
+
+# -atime -ctime -mtime
+a-access(read), m-modify,c-change
+
+#-amin -cmin -mmin
+
+
+#SIZE
+K:kb,M:mb,G:gb
+
+
+
+
+
+
+
+
+
+INTERVIEW QUESTION
+
+1.read n no of files gives by user on prompt whilw running
+2.//combiner.sh amp1.txt amp2.txt amp3.txt
+3.show all files given (names only)
+4.check if dile exixts then print the data on screen else error
+5.and combine all data in final.txt and end show content of final.txt
+6.also print words lines and char of combined file (use pipe)
+
+
+
+
+
+1.#search all the lines that has data word
+word="data"
+list_of_files=$(grep -l "$word" *.txt)
+echo -e "data extracted:\n $list_of_files"
+
+2.#use loop to print one file at a time
+for file in "$list_of_files"
+do
+echo "file:$file has $word"
+done
+
+3.#print all lines that has data
+grep -i -n "$word" *.txt
+
+
+
+
+
+1.take a extension from user as positional argument and print count of that file 
+2.list all given extensions *.txt *.dat *.sh files
+3.count total lines generated
+4.print
+
+
+
+
+#find
+1.list all sh,txt files and save it into another file
+output="shells.txt"> "$output"
+for ((i=1;i<=10;i++))
+do	
+	echo -e "files $i days ago\n">>$output
+	echo "------------------------------">>"$output"
+	find . -type f -name "*.sh" -atime -$i>>"$output"
+done
+
+2.list .sh files 1 day 2 day 3 day ....10 days created files (use for loop)
+
+
+
+
+ exams--terms/facts/algo
+terms-- os basics
+facts-- types of os
+
+
+
+
+
+
+#interview
+
+basics surview then next
+concepts
+for cloup companys shells and scripting except syntax shell script programs ,do you know blah..,command related questions,if else ,search ,find ,
+advance add close update, filter some dat and add to new file 
+diff beth kubertenies and docker
+ready for why?
+final advance future of tech
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
